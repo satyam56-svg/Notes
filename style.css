@@ -54,8 +54,12 @@
     color: #333;
     padding: 20px;
     margin: 20px 0;
-    outline: none;
     border-radius: 5px;
+}
+
+.input-box p {
+    min-height: 120px;
+    outline: none;
 }
 
 .input-box img {

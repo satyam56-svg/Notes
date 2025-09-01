@@ -11,11 +11,16 @@ function updateStorage() {
 }
 
 createBtn.addEventListener("click", ()=> {
-    let inputBox = document.createElement("p");
+    let inputBox = document.createElement("div");
     let img = document.createElement("img");
+    let noteText = document.createElement("p");
+
     inputBox.className = "input-box";
-    inputBox.setAttribute("contenteditable", "true");
+
+    noteText.setAttribute("contenteditable", "true");
     img.src = "notes-app-img/images/delete.png";
+
+    inputBox.appendChild(noteText);
     inputBox.appendChild(img);
     notesContainer.appendChild(inputBox);
     updateStorage();
