@@ -2,8 +2,19 @@ const notesContainer = document.querySelector(".notes-container");
 const createBtn = document.querySelector(".btn");
 
 function showNotes() {
-    notesContainer.innerHTML = localStorage.getItem("notes") || "";   
+    notesContainer.innerHTML = localStorage.getItem("notes") || "";
+
+    // agar delete button missing hai to add kar do
+    let notes = notesContainer.querySelectorAll(".input-box");
+    notes.forEach(note => {
+        if (!note.querySelector("img")) {
+            let img = document.createElement("img");
+            img.src = "notes-app-img/images/delete.png";
+            note.appendChild(img);
+        }
+    });
 }
+
 showNotes();
 
 function updateStorage() {
